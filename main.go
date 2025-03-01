@@ -9,6 +9,7 @@ func main() {
 	fmt.Println("These are the list of algorithms that I have implemented so far:")
 	fmt.Println("1. Merge Sort")
 	fmt.Println("2. Bubble Sort")
+	fmt.Println("3. Selection Sort")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -20,7 +21,12 @@ func main() {
 		fmt.Println("Before sorting: ", nums)
 		fmt.Println("After sorting: ", mergeSort(nums))
 	case 2:
-		fmt.Println("Merge Sort")
+		fmt.Println("Bubble Sort")
+		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
+		fmt.Println("Before sorting: ", nums)
+		fmt.Println("After sorting: ", bubbleSort(nums))
+	case 3:
+		fmt.Println("Selection Sort")
 		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
 		fmt.Println("Before sorting: ", nums)
 		fmt.Println("After sorting: ", bubbleSort(nums))
@@ -82,6 +88,27 @@ func bubbleSort(arr []int) []int {
 
 		if !swapped {
 			break
+		}
+	}
+
+	return arr
+}
+
+func selectionSort(arr []int) []int {
+
+	for _, i := range arr {
+
+		minIndex := i
+
+		for j := i + 1; j < len(arr); j++ {
+
+			if arr[minIndex] > arr[j] {
+				minIndex = j
+			}
+		}
+
+		if minIndex != i {
+			arr[minIndex], arr[i] = arr[i], arr[minIndex]
 		}
 	}
 
