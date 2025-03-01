@@ -1,9 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println(mergeSort([]int{1, 4, 3, 2, 7}))
+
+	fmt.Println("These are the list of algorithms that I have implemented so far:")
+	fmt.Println("1. Merge Sort")
+	fmt.Print("Enter the number of the algorithm you want to run: ")
+	var input int
+	fmt.Scan(&input)
+
+	switch input {
+	case 1:
+		fmt.Println("Merge Sort")
+		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
+		fmt.Println("Before sorting: ", nums)
+		fmt.Println("After sorting: ", mergeSort(nums))
+	default:
+		fmt.Println("Invalid input")
+	}
 }
 
 func mergeSort(arr []int) []int {
@@ -32,15 +49,13 @@ func mergeSort(arr []int) []int {
 				newArr = append(newArr, leftArr[leftIdx])
 				leftIdx++
 			}
-
-		} else if len(leftArr) > leftIdx {
-			newArr = append(newArr, leftArr[leftIdx:]...)
-			break
-		} else if len(rightArr) > rightIdx {
-			newArr = append(newArr, rightArr[rightIdx:]...)
+		} else {
 			break
 		}
 	}
+
+	newArr = append(newArr, leftArr[leftIdx:]...)
+	newArr = append(newArr, rightArr[rightIdx:]...)
 
 	return newArr
 }
