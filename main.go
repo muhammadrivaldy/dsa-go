@@ -10,6 +10,7 @@ func main() {
 	fmt.Println("1. Merge Sort")
 	fmt.Println("2. Bubble Sort")
 	fmt.Println("3. Selection Sort")
+	fmt.Println("4. Insertion Sort")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
