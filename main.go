@@ -29,7 +29,12 @@ func main() {
 		fmt.Println("Selection Sort")
 		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
 		fmt.Println("Before sorting: ", nums)
-		fmt.Println("After sorting: ", bubbleSort(nums))
+		fmt.Println("After sorting: ", selectionSort(nums))
+	case 4:
+		fmt.Println("Insertion Sort")
+		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
+		fmt.Println("Before sorting: ", nums)
+		fmt.Println("After sorting: ", insertionSort(nums))
 	default:
 		fmt.Println("Invalid input")
 	}
@@ -110,6 +115,29 @@ func selectionSort(arr []int) []int {
 		if minIndex != i {
 			arr[minIndex], arr[i] = arr[i], arr[minIndex]
 		}
+	}
+
+	return arr
+}
+
+func insertionSort(arr []int) []int {
+
+	for _, i := range arr {
+
+		insertIndex := i
+		currentValue := arr[i]
+
+		for _, j := range arr[:i] {
+
+			if arr[j] > currentValue {
+				arr[j+1] = arr[j]
+				insertIndex = j
+			} else {
+				break
+			}
+		}
+
+		arr[insertIndex] = currentValue
 	}
 
 	return arr
