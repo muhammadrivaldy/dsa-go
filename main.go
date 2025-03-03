@@ -164,17 +164,17 @@ func quickSort(arr []int, low, high int) []int {
 
 func quickSortPartition(arr []int, low, high int) int {
 
-	i := low - 1
+	i := low
 
 	for j := low; j < high; j++ {
 
 		if arr[j] <= arr[high] {
-			i += 1
 			arr[i], arr[j] = arr[j], arr[i]
+			i += 1
 		}
 	}
 
-	arr[i+1], arr[high] = arr[high], arr[i+1]
+	arr[i], arr[high] = arr[high], arr[i]
 
-	return i + 1
+	return i
 }
