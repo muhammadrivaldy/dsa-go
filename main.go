@@ -11,6 +11,7 @@ func main() {
 	fmt.Println("2. Bubble Sort")
 	fmt.Println("3. Selection Sort")
 	fmt.Println("4. Insertion Sort")
+	fmt.Println("5. Quick Sort")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -36,6 +37,11 @@ func main() {
 		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
 		fmt.Println("Before sorting: ", nums)
 		fmt.Println("After sorting: ", insertionSort(nums))
+	case 5:
+		fmt.Println("Quick Sort")
+		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
+		fmt.Println("Before sorting: ", nums)
+		fmt.Println("After sorting: ", quickSort(nums, 0, len(nums)-1))
 	default:
 		fmt.Println("Invalid input")
 	}
@@ -142,4 +148,33 @@ func insertionSort(arr []int) []int {
 	}
 
 	return arr
+}
+
+func quickSort(arr []int, low, high int) []int {
+
+	if low < high {
+
+		pivot := quickSortPartition(arr, low, high)
+		quickSort(arr, low, pivot-1)
+		quickSort(arr, pivot+1, high)
+	}
+
+	return arr
+}
+
+func quickSortPartition(arr []int, low, high int) int {
+
+	i := low - 1
+
+	for j := low; j < high; j++ {
+
+		if arr[j] <= arr[high] {
+			i += 1
+			arr[i], arr[j] = arr[j], arr[i]
+		}
+	}
+
+	arr[i+1], arr[high] = arr[high], arr[i+1]
+
+	return i + 1
 }
