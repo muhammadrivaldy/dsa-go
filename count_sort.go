@@ -2,11 +2,7 @@ package main
 
 func countSort(arr []int) []int {
 
-	groupArr := [][]int{}
-	for i := 0; i <= getMax(arr); i++ {
-		groupArr = append(groupArr, []int{})
-	}
-
+	groupArr := make([][]int, (getMax(arr) + 1))
 	for _, val := range arr {
 		groupArr[val] = append(groupArr[val], val)
 	}
