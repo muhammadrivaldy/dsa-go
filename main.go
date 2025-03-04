@@ -12,6 +12,7 @@ func main() {
 	fmt.Println("3. Selection Sort")
 	fmt.Println("4. Insertion Sort")
 	fmt.Println("5. Quick Sort")
+	fmt.Println("6. Count Sort")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -42,6 +43,12 @@ func main() {
 		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
 		fmt.Println("Before sorting: ", nums)
 		fmt.Println("After sorting: ", quickSort(nums, 0, len(nums)-1))
+	case 6:
+		fmt.Println("Count Sort")
+		nums := []int{4, 2, 5, 8, 7, 7, 5, 5, 3, 1, 8, 7, 6, 8, 6, 7}
+		max := 8
+		fmt.Println("Before sorting: ", nums)
+		fmt.Println("After sorting: ", countSort(nums, max))
 	default:
 		fmt.Println("Invalid input")
 	}
