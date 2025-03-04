@@ -13,6 +13,7 @@ func main() {
 	fmt.Println("4. Insertion Sort")
 	fmt.Println("5. Quick Sort")
 	fmt.Println("6. Count Sort")
+	fmt.Println("7. Radix Sort")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -48,6 +49,11 @@ func main() {
 		nums := []int{4, 2, 5, 8, 7, 7, 5, 5, 3, 1, 8, 7, 6, 8, 6, 7}
 		fmt.Println("Before sorting: ", nums)
 		fmt.Println("After sorting: ", countSort(nums))
+	case 7:
+		fmt.Println("Radix Sort")
+		nums := []int{32, 128, 20, 2, 881, 29, 95, 77}
+		fmt.Println("Before sorting: ", nums)
+		fmt.Println("After sorting: ", radixSort(nums))
 	default:
 		fmt.Println("Invalid input")
 	}
