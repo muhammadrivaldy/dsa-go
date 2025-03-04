@@ -46,9 +46,8 @@ func main() {
 	case 6:
 		fmt.Println("Count Sort")
 		nums := []int{4, 2, 5, 8, 7, 7, 5, 5, 3, 1, 8, 7, 6, 8, 6, 7}
-		max := 8
 		fmt.Println("Before sorting: ", nums)
-		fmt.Println("After sorting: ", countSort(nums, max))
+		fmt.Println("After sorting: ", countSort(nums))
 	default:
 		fmt.Println("Invalid input")
 	}

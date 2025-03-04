@@ -1,9 +1,9 @@
 package main
 
-func countSort(arr []int, max int) []int {
+func countSort(arr []int) []int {
 
 	groupArr := [][]int{}
-	for i := 0; i <= max; i++ {
+	for i := 0; i <= getMax(arr); i++ {
 		groupArr = append(groupArr, []int{})
 	}
 
