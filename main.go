@@ -36,7 +36,6 @@ func main() {
 		fmt.Println("After sorting: ", selectionSort(nums))
 	case 4:
 		fmt.Println("Insertion Sort")
-		// nums := []int{3, 2, 1}
 		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
 		fmt.Println("Before sorting: ", nums)
 		fmt.Println("After sorting: ", insertionSort(nums))
