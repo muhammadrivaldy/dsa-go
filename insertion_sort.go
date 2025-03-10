@@ -2,8 +2,6 @@ package main
 
 func insertionSort(arr []int) []int {
 
-	// input [3, 2, 4, 1]
-
 	for i := 0; i < len(arr); i++ {
 
 		insertIdx := i
