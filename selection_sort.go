@@ -4,17 +4,16 @@ func selectionSort(arr []int) []int {
 
 	for i := 0; i < len(arr); i++ {
 
-		minIndex := i
+		smallIdx := i
 
-		for j := i + 1; j < len(arr); j++ {
-
-			if arr[minIndex] > arr[j] {
-				minIndex = j
+		for j := (i + 1); j < len(arr); j++ {
+			if arr[j] < arr[smallIdx] {
+				smallIdx = j
 			}
 		}
 
-		if minIndex != i {
-			arr[minIndex], arr[i] = arr[i], arr[minIndex]
+		if smallIdx != i {
+			arr[i], arr[smallIdx] = arr[smallIdx], arr[i]
 		}
 	}
 
