@@ -8,7 +8,6 @@ func radixSort(arr []int) []int {
 	for (max / exp) > 0 {
 
 		radixArr := make([][]int, 10)
-
 		for len(arr) > 0 {
 			val := arr[0]
 			arr = arr[1:]

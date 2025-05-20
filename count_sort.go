@@ -3,14 +3,14 @@ package main
 func countSort(arr []int) []int {
 
 	max := getMax(arr)
-	countedArr := make([][]int, max+1)
+	countArr := make([][]int, max+1)
 
 	for _, i := range arr {
-		countedArr[i] = append(countedArr[i], i)
+		countArr[i] = append(countArr[i], i)
 	}
 
 	newArr := []int{}
-	for _, i := range countedArr {
+	for _, i := range countArr {
 		newArr = append(newArr, i...)
 	}
 

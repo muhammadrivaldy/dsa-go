@@ -7,10 +7,12 @@ func insertionSort(arr []int) []int {
 		currentVal := arr[i]
 		targetedIdx := i
 
-		for j := i - 1; j >= 0; j-- {
-			if arr[j] > currentVal {
-				arr[j+1] = arr[j]
-				targetedIdx = j
+		for j := i; j > 0; j-- {
+			if arr[j-1] > currentVal {
+				arr[j] = arr[j-1]
+				targetedIdx--
+			} else {
+				break
 			}
 		}
 
