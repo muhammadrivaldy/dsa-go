@@ -1,7 +1,6 @@
 package main
 
 func quickSort(arr []int, low, high int) []int {
-
 	if low < high {
 		pivot := quickSortPivot(arr, low, high)
 		quickSort(arr, low, pivot-1)
@@ -12,9 +11,7 @@ func quickSort(arr []int, low, high int) []int {
 }
 
 func quickSortPivot(arr []int, low, high int) int {
-
 	pivot := low
-
 	for i := low; i < high; i++ {
 		if arr[i] < arr[high] {
 			arr[i], arr[pivot] = arr[pivot], arr[i]

@@ -1,22 +1,16 @@
 package main
 
 func insertionSort(arr []int) []int {
-
 	for i := 0; i < len(arr); i++ {
-
-		currentVal := arr[i]
+		minVal := arr[i]
 		targetedIdx := i
-
-		for j := i; j > 0; j-- {
-			if arr[j-1] > currentVal {
-				arr[j] = arr[j-1]
-				targetedIdx--
-			} else {
-				break
+		for j := i - 1; j >= 0; j-- {
+			if arr[j] > minVal {
+				arr[j+1] = arr[j]
+				targetedIdx = j
 			}
 		}
-
-		arr[targetedIdx] = currentVal
+		arr[targetedIdx] = minVal
 	}
 
 	return arr

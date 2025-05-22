@@ -1,7 +1,6 @@
 package main
 
 func mergeSort(arr []int) []int {
-
 	if len(arr) <= 1 {
 		return arr
 	}
@@ -10,9 +9,9 @@ func mergeSort(arr []int) []int {
 	lArr := mergeSort(arr[:mid])
 	rArr := mergeSort(arr[mid:])
 
+	newArr := []int{}
 	lIdx := 0
 	rIdx := 0
-	newArr := []int{}
 
 	for lIdx < len(lArr) && rIdx < len(rArr) {
 		if lArr[lIdx] < rArr[rIdx] {
