@@ -9,12 +9,12 @@ func radixSort(arr []int) []int {
 		for len(arr) > 0 {
 			val := arr[0]
 			arr = arr[1:]
-			radix := (val / exp) % 10
-			radixArr[radix] = append(radixArr[radix], val)
+			radixVal := (val / exp) % 10
+			radixArr[radixVal] = append(radixArr[radixVal], val)
 		}
 
-		for _, bucket := range radixArr {
-			arr = append(arr, bucket...)
+		for _, val := range radixArr {
+			arr = append(arr, val...)
 		}
 
 		exp *= 10

@@ -6,7 +6,6 @@ func quickSort(arr []int, low, high int) []int {
 		quickSort(arr, low, pivot-1)
 		quickSort(arr, pivot+1, high)
 	}
-
 	return arr
 }
 
@@ -18,8 +17,6 @@ func quickSortPivot(arr []int, low, high int) int {
 			pivot++
 		}
 	}
-
 	arr[pivot], arr[high] = arr[high], arr[pivot]
-
 	return pivot
 }
