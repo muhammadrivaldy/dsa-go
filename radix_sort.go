@@ -13,8 +13,8 @@ func radixSort(arr []int) []int {
 			radixArr[radixVal] = append(radixArr[radixVal], val)
 		}
 
-		for _, val := range radixArr {
-			arr = append(arr, val...)
+		for _, i := range radixArr {
+			arr = append(arr, i...)
 		}
 
 		exp *= 10
