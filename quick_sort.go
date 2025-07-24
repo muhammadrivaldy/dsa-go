@@ -1,22 +1,23 @@
 package main
 
-func quickSort(arr []int, low, high int) []int {
-	if low < high {
-		pivot := quickSortPivot(arr, low, high)
-		quickSort(arr, low, pivot-1)
-		quickSort(arr, pivot+1, high)
+// [9, 10, 4, 8, 3, 5, 2, 7, 6, 1]
+func quickSort(arr []int, min, max int) []int {
+	if min < max {
+		pivot := quickSortPivot(arr, min, max)
+		quickSort(arr, 0, pivot-1)
+		quickSort(arr, pivot+1, max)
 	}
 	return arr
 }
 
-func quickSortPivot(arr []int, low, high int) int {
-	pivot := low
-	for i := low; i < high; i++ {
-		if arr[i] < arr[high] {
+func quickSortPivot(arr []int, min, max int) int {
+	pivot := min
+	for i := min; i < max; i++ {
+		if arr[i] < arr[max] {
 			arr[i], arr[pivot] = arr[pivot], arr[i]
 			pivot++
 		}
 	}
-	arr[pivot], arr[high] = arr[high], arr[pivot]
+	arr[pivot], arr[max] = arr[max], arr[pivot]
 	return pivot
 }
