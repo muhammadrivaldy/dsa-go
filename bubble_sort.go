@@ -3,15 +3,15 @@ package main
 func bubbleSort(arr []int) []int {
 
 	for {
-		isSwap := false
+		isSwapped := false
 		for i := 1; i < len(arr); i++ {
-			for arr[i-1] > arr[i] {
+			if arr[i-1] > arr[i] {
 				arr[i-1], arr[i] = arr[i], arr[i-1]
-				isSwap = true
+				isSwapped = true
 			}
 		}
 
-		if !isSwap {
+		if !isSwapped {
 			break
 		}
 	}

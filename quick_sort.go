@@ -1,6 +1,5 @@
 package main
 
-// [9, 10, 4, 8, 3, 5, 2, 7, 6, 1]
 func quickSort(arr []int, min, max int) []int {
 	if min < max {
 		pivot := quickSortPivot(arr, min, max)

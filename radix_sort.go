@@ -3,9 +3,7 @@ package main
 func radixSort(arr []int) []int {
 	max := getMax(arr)
 	exp := 1
-
 	for (max / exp) > 0 {
-
 		radixArr := make([][]int, 10)
 		for len(arr) > 0 {
 			val := arr[0]
@@ -13,11 +11,9 @@ func radixSort(arr []int) []int {
 			radixVal := (val / exp) % 10
 			radixArr[radixVal] = append(radixArr[radixVal], val)
 		}
-
-		for _, val := range radixArr {
-			arr = append(arr, val...)
+		for _, radixArr := range radixArr {
+			arr = append(arr, radixArr...)
 		}
-
 		exp *= 10
 	}
 
