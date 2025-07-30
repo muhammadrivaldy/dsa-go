@@ -6,7 +6,6 @@ func countSort(arr []int) []int {
 	for _, i := range arr {
 		countArr[i] = append(countArr[i], i)
 	}
-
 	arr = []int{}
 	for _, i := range countArr {
 		arr = append(arr, i...)
