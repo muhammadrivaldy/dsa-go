@@ -12,12 +12,15 @@ func mergeSort(arr []int) []int {
 	newArr := []int{}
 	leftIdx := 0
 	rightIdx := 0
+
 	for len(leftArr) > leftIdx && len(rightArr) > rightIdx {
-		if leftArr[leftIdx] < rightArr[rightIdx] {
-			newArr = append(newArr, leftArr[leftIdx])
+		leftVal := leftArr[leftIdx]
+		rightVal := rightArr[rightIdx]
+		if leftVal < rightVal {
+			newArr = append(newArr, leftVal)
 			leftIdx++
 		} else {
-			newArr = append(newArr, rightArr[rightIdx])
+			newArr = append(newArr, rightVal)
 			rightIdx++
 		}
 	}
