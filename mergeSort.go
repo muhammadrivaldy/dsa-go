@@ -6,13 +6,12 @@ func mergeSort(arr []int) []int {
 	}
 
 	mid := len(arr) / 2
-	leftIdx := 0
-	rightIdx := 0
-	newArr := []int{}
-
 	leftArr := mergeSort(arr[:mid])
 	rightArr := mergeSort(arr[mid:])
 
+	newArr := []int{}
+	leftIdx := 0
+	rightIdx := 0
 	for len(leftArr) > leftIdx && len(rightArr) > rightIdx {
 		if leftArr[leftIdx] < rightArr[rightIdx] {
 			newArr = append(newArr, leftArr[leftIdx])
