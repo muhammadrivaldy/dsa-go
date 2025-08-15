@@ -18,6 +18,5 @@ func radixSort(arr []int) []int {
 
 		exp *= 10
 	}
-
 	return arr
 }

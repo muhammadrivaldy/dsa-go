@@ -11,5 +11,6 @@ func countSort(arr []int) []int {
 	for _, i := range countArr {
 		arr = append(arr, i...)
 	}
+
 	return arr
 }
