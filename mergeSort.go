@@ -14,13 +14,14 @@ func mergeSort(arr []int) []int {
 	rightIdx := 0
 
 	for len(leftArr) > leftIdx && len(rightArr) > rightIdx {
-		leftVal := leftArr[leftIdx]
-		rightVal := rightArr[rightIdx]
-		if leftVal < rightVal {
-			newArr = append(newArr, leftVal)
+		lVal := leftArr[leftIdx]
+		rVal := rightArr[rightIdx]
+
+		if lVal < rVal {
+			newArr = append(newArr, lVal)
 			leftIdx++
 		} else {
-			newArr = append(newArr, rightVal)
+			newArr = append(newArr, rVal)
 			rightIdx++
 		}
 	}

@@ -2,15 +2,15 @@ package main
 
 func insertionSort(arr []int) []int {
 	for i := 1; i < len(arr); i++ {
-		insertIdx := i
+		targetIdx := i
 		currentVal := arr[i]
 		for j := (i - 1); j >= 0; j-- {
-			if arr[j] > currentVal {
+			if currentVal < arr[j] {
 				arr[j+1] = arr[j]
-				insertIdx = j
+				targetIdx = j
 			}
 		}
-		arr[insertIdx] = currentVal
+		arr[targetIdx] = currentVal
 	}
 	return arr
 }
