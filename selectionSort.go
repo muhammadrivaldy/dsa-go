@@ -2,13 +2,13 @@ package main
 
 func selectionSort(arr []int) []int {
 	for i := 0; i < len(arr); i++ {
-		smallIdx := i
+		selectionIdx := i
 		for j := (i + 1); j < len(arr); j++ {
-			if arr[smallIdx] > arr[j] {
-				smallIdx = j
+			if arr[selectionIdx] > arr[j] {
+				selectionIdx = j
 			}
 		}
-		arr[smallIdx], arr[i] = arr[i], arr[smallIdx]
+		arr[selectionIdx], arr[i] = arr[i], arr[selectionIdx]
 	}
 	return arr
 }

@@ -14,6 +14,9 @@ func main() {
 	fmt.Println("5. Quick Sort")
 	fmt.Println("6. Count Sort")
 	fmt.Println("7. Radix Sort")
+	fmt.Println("8. Linear Search")
+	fmt.Println("9. Binary Search")
+	fmt.Println("10. Linked List")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
