@@ -60,8 +60,13 @@ func main() {
 	case 8:
 		fmt.Println("Linear Search")
 		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
-		fmt.Printf("Array value: %v, Search value: %d \n", nums, 7)
+		fmt.Printf("Array value: %v, Search value: %d\n", nums, 7)
 		fmt.Println("Index:", linearSearch(nums, 7))
+	case 9:
+		fmt.Println("Binary Search")
+		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
+		fmt.Printf("Array value: %v, Search value: %d\n", nums, 29)
+		fmt.Println("Index:", binarySearch(nums, 29))
 	default:
 		fmt.Println("Invalid input")
 	}
