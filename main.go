@@ -71,9 +71,7 @@ func main() {
 		fmt.Println("Linked List")
 		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
 		singlyLinkedList(nums)
-		fmt.Println()
 		doublyLinkedList(nums)
-		fmt.Println()
 		circualLinkedList(nums)
 	default:
 		fmt.Println("Invalid input")
