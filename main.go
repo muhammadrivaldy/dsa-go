@@ -67,6 +67,14 @@ func main() {
 		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
 		fmt.Printf("Array value: %v, Search value: %d\n", nums, 29)
 		fmt.Println("Index:", binarySearch(nums, 29))
+	case 10:
+		fmt.Println("Linked List")
+		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
+		singlyLinkedList(nums)
+		fmt.Println()
+		doublyLinkedList(nums)
+		fmt.Println()
+		circualLinkedList(nums)
 	default:
 		fmt.Println("Invalid input")
 	}
