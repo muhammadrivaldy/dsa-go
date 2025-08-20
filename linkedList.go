@@ -26,16 +26,12 @@ func singlyLinkedList(arr []int) {
 	output := []string{}
 	node = head.Next
 	for node != nil {
-		node = singlyPrint(node, &output)
+		output = append(output, fmt.Sprint(node.Value))
+		node = node.Next
 	}
 
 	fmt.Println("Completed to run singly linked list")
 	fmt.Printf("The output is: [%v]\n", strings.Join(output, ", "))
-}
-
-func singlyPrint(node *singlyNode, output *[]string) *singlyNode {
-	*output = append(*output, fmt.Sprint(node.Value))
-	return node.Next
 }
 
 type doublyNode struct {
