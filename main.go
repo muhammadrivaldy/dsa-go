@@ -68,11 +68,20 @@ func main() {
 		fmt.Printf("Array value: %v, Search value: %d\n", nums, 29)
 		fmt.Println("Index:", binarySearch(nums, 29))
 	case 10:
-		fmt.Println("Linked List")
+		fmt.Println("Singly Linked List")
 		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
-		singlyLinkedList(nums)
-		doublyLinkedList(nums)
-		circularLinkedList(nums)
+		resp := singlyLinkedList(nums)
+		singlyPrint(resp)
+	case 11:
+		fmt.Println("Doubly linked list")
+		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
+		resp := doublyLinkedList(nums)
+		doublyPrint(resp)
+	case 12:
+		fmt.Println("Circular Linked List")
+		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
+		resp := circularLinkedList(nums)
+		circularPrint(resp)
 	default:
 		fmt.Println("Invalid input")
 	}
