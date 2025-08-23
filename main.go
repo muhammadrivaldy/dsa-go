@@ -16,7 +16,9 @@ func main() {
 	fmt.Println("7. Radix Sort")
 	fmt.Println("8. Linear Search")
 	fmt.Println("9. Binary Search")
-	fmt.Println("10. Linked List")
+	fmt.Println("10. Singly Linked List")
+	fmt.Println("11. Doubly Linked List")
+	fmt.Println("12. Circular Linked List")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
