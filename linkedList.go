@@ -11,7 +11,9 @@ type singlyNode struct {
 }
 
 func singlyLinkedList(arr []int) {
-	fmt.Println("Starting run singly linked list")
+	output := []string{}
+	fmt.Println("Running singly linked list")
+
 	head := &singlyNode{}
 	node := head
 
@@ -21,15 +23,13 @@ func singlyLinkedList(arr []int) {
 		node = node.next
 	}
 
-	valStrings := []string{}
 	node = head.next
 	for node != nil {
-		valStrings = append(valStrings, fmt.Sprint(node.value))
+		output = append(output, fmt.Sprint(node.value))
 		node = node.next
 	}
 
-	fmt.Printf("Output: [%v]\n", strings.Join(valStrings, ", "))
-	fmt.Println("Finished run singly")
+	fmt.Printf("Finished running singly linked list, output: [%v]\n", strings.Join(output, ", "))
 }
 
 type doublyNode struct {
@@ -39,7 +39,9 @@ type doublyNode struct {
 }
 
 func doublyLinkedList(arr []int) {
-	fmt.Println("Starting run doubly linked list")
+	output := []string{}
+	fmt.Println("Running doubly linked list")
+
 	head := &doublyNode{}
 	node := head
 
@@ -48,20 +50,18 @@ func doublyLinkedList(arr []int) {
 		if node.value > 0 {
 			temp.prev = node
 		}
-
 		node.next = temp
 		node = node.next
 	}
 
-	valStrings := []string{}
 	node = head.next
 	isPrev := false
 	for node != nil {
-		valStrings = append(valStrings, fmt.Sprint(node.value))
+		output = append(output, fmt.Sprint(node.value))
 		if !isPrev {
 			if node.next == nil {
-				node = node.prev
 				isPrev = true
+				node = node.prev
 				continue
 			}
 			node = node.next
@@ -70,8 +70,7 @@ func doublyLinkedList(arr []int) {
 		}
 	}
 
-	fmt.Printf("Output: [%v]\n", strings.Join(valStrings, ", "))
-	fmt.Println("Finished run doubly")
+	fmt.Printf("Finished running doubly linked list, output: [%v]\n", strings.Join(output, ", "))
 }
 
 type circularNode struct {
@@ -80,32 +79,31 @@ type circularNode struct {
 }
 
 func circularLinkedList(arr []int) {
-	fmt.Println("Starting run circular linked list")
+	output := []string{}
+	fmt.Println("Running circular linked list")
+
 	head := &circularNode{}
 	node := head
 
 	for _, i := range arr {
 		temp := &circularNode{value: i}
 		node.next = temp
-		node = temp
+		node = node.next
 	}
 
-	valStrings := []string{}
 	node.next = head.next
+	repeat, target := 0, 2
 	node = head.next
-	repeat := 0
-	target := 10
 	for node != nil {
-		valStrings = append(valStrings, fmt.Sprint(node.value))
-		node = node.next
 		if node.value == arr[0] {
 			repeat++
-			if repeat == target {
+			if repeat > target {
 				break
 			}
 		}
+		output = append(output, fmt.Sprint(node.value))
+		node = node.next
 	}
 
-	fmt.Printf("Output: [%v]\n", strings.Join(valStrings, ", "))
-	fmt.Println("Finished run circular")
+	fmt.Printf("Finished running circular doubly linked list, output: [%v]\n", strings.Join(output, ", "))
 }

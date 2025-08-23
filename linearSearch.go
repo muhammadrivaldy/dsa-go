@@ -1,12 +1,12 @@
 package main
 
 func linearSearch(arr []int, search int) int {
-	index := -1
+	idx := -1
 	for i, v := range arr {
-		if search == v {
-			index = i
+		if v == search {
+			idx = i
 			break
 		}
 	}
-	return index
+	return idx
 }
