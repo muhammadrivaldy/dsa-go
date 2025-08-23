@@ -20,6 +20,7 @@ func main() {
 	fmt.Println("11. Doubly Linked List")
 	fmt.Println("12. Circular Linked List")
 	fmt.Println("13. Insert a Node")
+	fmt.Println("14. Remove a Node")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -91,6 +92,13 @@ func main() {
 		fmt.Println("Before:", nums)
 		resp := singlyLinkedList(nums)
 		resp = insertNode(50, 32, resp)
+		singlyPrint(resp)
+	case 14:
+		fmt.Println("Remove a Node")
+		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
+		fmt.Println("Before:", nums)
+		resp := singlyLinkedList(nums)
+		resp = removeNode(881, resp)
 		singlyPrint(resp)
 	default:
 		fmt.Println("Invalid input")
