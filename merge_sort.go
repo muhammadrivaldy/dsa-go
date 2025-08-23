@@ -9,20 +9,15 @@ func mergeSort(arr []int) []int {
 	lArr := mergeSort(arr[:mid])
 	rArr := mergeSort(arr[mid:])
 
+	lIdx, rIdx := 0, 0
 	newArr := []int{}
-	lIdx := 0
-	rIdx := 0
 
 	for len(lArr) > lIdx && len(rArr) > rIdx {
-
-		lVal := lArr[lIdx]
-		rVal := rArr[rIdx]
-
-		if lVal < rVal {
-			newArr = append(newArr, lVal)
+		if lArr[lIdx] < rArr[rIdx] {
+			newArr = append(newArr, lArr[lIdx])
 			lIdx++
 		} else {
-			newArr = append(newArr, rVal)
+			newArr = append(newArr, rArr[rIdx])
 			rIdx++
 		}
 	}

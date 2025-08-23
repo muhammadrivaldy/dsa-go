@@ -72,7 +72,7 @@ func main() {
 		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
 		singlyLinkedList(nums)
 		doublyLinkedList(nums)
-		circualLinkedList(nums)
+		circularLinkedList(nums)
 	default:
 		fmt.Println("Invalid input")
 	}
