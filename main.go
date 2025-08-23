@@ -19,6 +19,7 @@ func main() {
 	fmt.Println("10. Singly Linked List")
 	fmt.Println("11. Doubly Linked List")
 	fmt.Println("12. Circular Linked List")
+	fmt.Println("13. Insert a Node")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -62,12 +63,12 @@ func main() {
 	case 8:
 		fmt.Println("Linear Search")
 		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
-		fmt.Printf("Array value: %v, Search value: %d\n", nums, 7)
+		fmt.Printf("Array value: %v, search value: %d\n", nums, 7)
 		fmt.Println("Index:", linearSearch(nums, 7))
 	case 9:
 		fmt.Println("Binary Search")
 		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
-		fmt.Printf("Array value: %v, Search value: %d\n", nums, 29)
+		fmt.Printf("Array value: %v, search value: %d\n", nums, 29)
 		fmt.Println("Index:", binarySearch(nums, 29))
 	case 10:
 		fmt.Println("Singly Linked List")
@@ -84,6 +85,13 @@ func main() {
 		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
 		resp := circularLinkedList(nums)
 		circularPrint(resp)
+	case 13:
+		fmt.Println("Insert a Node")
+		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
+		fmt.Println("Before:", nums)
+		resp := singlyLinkedList(nums)
+		resp = insertNode(50, 32, resp)
+		singlyPrint(resp)
 	default:
 		fmt.Println("Invalid input")
 	}
