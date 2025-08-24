@@ -21,7 +21,8 @@ func main() {
 	fmt.Println("12. Circular Linked List")
 	fmt.Println("13. Insert a Node")
 	fmt.Println("14. Remove a Node")
-	fmt.Println("15. Bubble Sort Linked List")
+	fmt.Println("15. Merge Sort Linked List")
+	fmt.Println("16. Bubble Sort Linked List")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -102,6 +103,13 @@ func main() {
 		resp = removeNode(881, resp)
 		singlyPrint(resp)
 	case 15:
+		fmt.Println("Merge Sort Linked List")
+		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
+		fmt.Println("Before:", nums)
+		resp := singlyLinkedList(nums)
+		resp = mergeSortLinkedList(resp)
+		singlyPrint(resp)
+	case 16:
 		fmt.Println("Bubble Sort Linked List")
 		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
 		fmt.Println("Before:", nums)
