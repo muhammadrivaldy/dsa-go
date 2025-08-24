@@ -3,6 +3,7 @@ package main
 func bubbleSortLinkedList(node *singlyNode) *singlyNode {
 	head := node
 	for {
+		node = head
 		isSwap := false
 		for node.next != nil {
 			if node.value > node.next.value {
@@ -14,7 +15,6 @@ func bubbleSortLinkedList(node *singlyNode) *singlyNode {
 		if !isSwap {
 			break
 		}
-		node = head
 	}
 	return head
 }

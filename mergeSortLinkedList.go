@@ -6,7 +6,6 @@ func mergeSortLinkedList(node *singlyNode) *singlyNode {
 	}
 
 	a, b := mergeSortLinkedListSplitIntoTwo(node)
-
 	a = mergeSortLinkedList(a)
 	b = mergeSortLinkedList(b)
 
@@ -35,7 +34,7 @@ func mergeSortLinkedListSplitIntoTwo(node *singlyNode) (*singlyNode, *singlyNode
 	return node, mid
 }
 
-func mergeSortLinkedListSorted(a *singlyNode, b *singlyNode) *singlyNode {
+func mergeSortLinkedListSorted(a, b *singlyNode) *singlyNode {
 	if a == nil {
 		return b
 	} else if b == nil {
