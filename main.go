@@ -24,6 +24,7 @@ func main() {
 	fmt.Println("15. Merge Sort Linked List")
 	fmt.Println("16. Bubble Sort Linked List")
 	fmt.Println("17. Selection Sort Linked List")
+	fmt.Println("18. Insertion Sort Linked List")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -123,6 +124,13 @@ func main() {
 		fmt.Println("Before:", nums)
 		resp := singlyLinkedList(nums)
 		resp = selectionSortLinkedList(resp)
+		singlyPrint(resp)
+	case 18:
+		fmt.Println("Insertion Sort Linked List")
+		nums := []int{9, 10, 4, 8, 3, 5, 2, 7, 6, 1}
+		fmt.Println("Before:", nums)
+		resp := singlyLinkedList(nums)
+		resp = insertionSortLinkedList(resp)
 		singlyPrint(resp)
 	default:
 		fmt.Println("Invalid input")
