@@ -27,6 +27,7 @@ func main() {
 	fmt.Println("18. Insertion Sort Linked List")
 	fmt.Println("19. Queues")
 	fmt.Println("20. Stacks")
+	fmt.Println("21. Binary Tree")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -152,6 +153,17 @@ func main() {
 		q.print()
 		q.pop()
 		q.print()
+	case 21:
+		fmt.Println("Binary Tree")
+		nums := []int{5, 2, 6, 3, 4}
+		fmt.Printf("Input: %v\n", nums)
+		resp := setBinaryTree(nums)
+		output := binaryNodePreOrder(resp)
+		fmt.Printf("Output pre order: %v\n", output)
+		output = binaryNodeInOrder(resp)
+		fmt.Printf("Output in order: %v\n", output)
+		output = binaryNodePostOrder(resp)
+		fmt.Printf("Output post order: %v\n", output)
 	default:
 		fmt.Println("Invalid input")
 	}
