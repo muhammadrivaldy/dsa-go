@@ -25,6 +25,8 @@ func main() {
 	fmt.Println("16. Bubble Sort Linked List")
 	fmt.Println("17. Selection Sort Linked List")
 	fmt.Println("18. Insertion Sort Linked List")
+	fmt.Println("19. Queues")
+	fmt.Println("20. Stacks")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 	var input int
 	fmt.Scan(&input)
@@ -132,6 +134,24 @@ func main() {
 		resp := singlyLinkedList(nums)
 		resp = insertionSortLinkedList(resp)
 		singlyPrint(resp)
+	case 19:
+		fmt.Println("Queues")
+		q := queue{}
+		q.enqueue(1)
+		q.enqueue(5)
+		q.enqueue(6)
+		q.print()
+		q.dequeue()
+		q.print()
+	case 20:
+		fmt.Println("Stacks")
+		q := stack{}
+		q.push(1)
+		q.push(5)
+		q.push(6)
+		q.print()
+		q.pop()
+		q.print()
 	default:
 		fmt.Println("Invalid input")
 	}
