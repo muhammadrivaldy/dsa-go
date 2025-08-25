@@ -2,32 +2,26 @@ package main
 
 type binaryNode struct {
 	value int
-	mNode *binaryNode
 	lNode *binaryNode
 	rNode *binaryNode
 }
 
 func setBinaryTree(arr []int) *binaryNode {
 
-	head := &binaryNode{}
+	head := &binaryNode{value: arr[0]}
 	node := head
 
-	for _, i := range arr {
-		node.addNode(i)
+	for i := 1; i < len(arr); i++ {
+		node.addNode(arr[i])
 		node = head
 	}
 
-	return head.mNode
+	return head
 }
 
 func (b *binaryNode) addNode(value int) {
 
-	if b.mNode == nil {
-		b.mNode = &binaryNode{value: value}
-		return
-	}
-
-	node := b.mNode
+	node := b
 
 	for node != nil {
 
