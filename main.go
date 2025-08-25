@@ -2,9 +2,18 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 )
 
 func main() {
+
+	args := os.Args[1:]
+	if len(args) > 0 {
+		fmt.Printf("Command-line args: %v\n", args)
+	}
+
+	input, _ := strconv.ParseInt(args[0], 0, 64)
 
 	fmt.Println("These are the list of algorithms that I have implemented so far:")
 	fmt.Println("1. Merge Sort")
@@ -29,8 +38,6 @@ func main() {
 	fmt.Println("20. Stacks")
 	fmt.Println("21. Binary Tree")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
-	var input int
-	fmt.Scan(&input)
 
 	switch input {
 	case 1:
@@ -105,7 +112,7 @@ func main() {
 		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
 		fmt.Println("Before:", nums)
 		resp := singlyLinkedList(nums)
-		resp = removeNode(881, resp)
+		resp = removeNode(95, resp)
 		singlyPrint(resp)
 	case 15:
 		fmt.Println("Merge Sort Linked List")
@@ -158,11 +165,11 @@ func main() {
 		nums := []int{5, 2, 6, 3, 4}
 		fmt.Printf("Input: %v\n", nums)
 		resp := setBinaryTree(nums)
-		output := binaryNodePreOrder(resp)
+		output := binaryTreePreOrder(resp)
 		fmt.Printf("Output pre order: %v\n", output)
-		output = binaryNodeInOrder(resp)
+		output = binaryTreeInOrder(resp)
 		fmt.Printf("Output in order: %v\n", output)
-		output = binaryNodePostOrder(resp)
+		output = binaryTreePostOrder(resp)
 		fmt.Printf("Output post order: %v\n", output)
 	default:
 		fmt.Println("Invalid input")

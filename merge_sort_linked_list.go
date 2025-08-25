@@ -1,6 +1,7 @@
 package main
 
 func mergeSortLinkedList(node *singlyNode) *singlyNode {
+
 	if node == nil || node.next == nil {
 		return node
 	}
@@ -12,29 +13,8 @@ func mergeSortLinkedList(node *singlyNode) *singlyNode {
 	return mergeSortLinkedListSorted(a, b)
 }
 
-func mergeSortLinkedListSplitIntoTwo(node *singlyNode) (*singlyNode, *singlyNode) {
-	if node == nil || node.next == nil {
-		return node, nil
-	}
-
-	slow := node
-	fast := node.next
-
-	for fast != nil {
-		fast = fast.next
-		if fast != nil {
-			slow = slow.next
-			fast = fast.next
-		}
-	}
-
-	mid := slow.next
-	slow.next = nil
-
-	return node, mid
-}
-
 func mergeSortLinkedListSorted(a, b *singlyNode) *singlyNode {
+
 	if a == nil {
 		return b
 	} else if b == nil {
@@ -52,4 +32,27 @@ func mergeSortLinkedListSorted(a, b *singlyNode) *singlyNode {
 	}
 
 	return output
+}
+
+func mergeSortLinkedListSplitIntoTwo(node *singlyNode) (*singlyNode, *singlyNode) {
+
+	if node == nil || node.next == nil {
+		return node, nil
+	}
+
+	slow := node
+	fast := node.next
+
+	for fast != nil {
+		fast = fast.next
+		if fast != nil {
+			fast = fast.next
+			slow = slow.next
+		}
+	}
+
+	mid := slow.next
+	slow.next = nil
+
+	return node, mid
 }

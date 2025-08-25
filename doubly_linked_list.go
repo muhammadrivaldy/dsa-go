@@ -7,10 +7,12 @@ type doublyNode struct {
 }
 
 func doublyLinkedList(arr []int) *doublyNode {
+
 	head := &doublyNode{}
 	node := head
 
 	for _, i := range arr {
+
 		temp := &doublyNode{value: i}
 		if node.value > 0 {
 			temp.prev = node

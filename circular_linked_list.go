@@ -6,6 +6,7 @@ type circularNode struct {
 }
 
 func circularLinkedList(arr []int) *circularNode {
+
 	head := &circularNode{}
 	node := head
 
@@ -16,7 +17,6 @@ func circularLinkedList(arr []int) *circularNode {
 	}
 
 	node.next = head.next
-	node = head
 
 	return head.next
 }

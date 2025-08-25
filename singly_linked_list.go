@@ -6,6 +6,7 @@ type singlyNode struct {
 }
 
 func singlyLinkedList(arr []int) *singlyNode {
+
 	head := &singlyNode{}
 	node := head
 

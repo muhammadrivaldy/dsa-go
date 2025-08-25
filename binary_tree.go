@@ -13,89 +13,82 @@ func setBinaryTree(arr []int) *binaryNode {
 
 	for i := 1; i < len(arr); i++ {
 		node.addNode(arr[i])
-		node = head
 	}
 
 	return head
 }
 
-func (b *binaryNode) addNode(value int) {
+func (b *binaryNode) addNode(val int) {
 
 	node := b
 
-	for node != nil {
-
-		if value < node.value {
-
-			if node.lNode == nil {
-				node.lNode = &binaryNode{value: value}
-				return
-			} else {
-				node = node.lNode
-			}
-
-		} else {
-
-			if node.rNode == nil {
-				node.rNode = &binaryNode{value: value}
-				return
-			} else {
-				node = node.rNode
-			}
+	if node.value > val {
+		if node.lNode == nil {
+			node.lNode = &binaryNode{value: val}
+			return
 		}
+		node = node.lNode
+	} else {
+		if node.rNode == nil {
+			node.rNode = &binaryNode{value: val}
+			return
+		}
+		node = node.rNode
 	}
+
+	node.addNode(val)
 }
 
-func binaryNodeInOrder(node *binaryNode) []int {
+func binaryTreeInOrder(node *binaryNode) []int {
 
 	output := []int{}
 
 	if node != nil {
 
-		lArr := binaryNodeInOrder(node.lNode)
+		lArr := binaryTreeInOrder(node.lNode)
 		root := node.value
-		rArr := binaryNodeInOrder(node.rNode)
+		rArr := binaryTreeInOrder(node.rNode)
 
 		temp := []int{}
 		temp = append(temp, lArr...)
 		temp = append(temp, root)
 		temp = append(temp, rArr...)
 
-		output = append(temp, output...)
-	}
-
-	return output
-}
-
-func binaryNodePreOrder(node *binaryNode) []int {
-
-	output := []int{}
-
-	if node != nil {
-
-		root := node.value
-		lArr := binaryNodePreOrder(node.lNode)
-		rArr := binaryNodePreOrder(node.rNode)
-
-		temp := []int{}
-		temp = append(temp, root)
-		temp = append(temp, lArr...)
-		temp = append(temp, rArr...)
-
-		output = append(temp, output...)
+		output = temp
 	}
 
 	return output
 }
 
-func binaryNodePostOrder(node *binaryNode) []int {
+func binaryTreePreOrder(node *binaryNode) []int {
 
 	output := []int{}
 
 	if node != nil {
 
-		lArr := binaryNodePostOrder(node.lNode)
-		rArr := binaryNodePostOrder(node.rNode)
+		root := node.value
+		lArr := binaryTreePreOrder(node.lNode)
+		rArr := binaryTreePreOrder(node.rNode)
+
+		temp := []int{}
+		temp = append(temp, root)
+		temp = append(temp, lArr...)
+		temp = append(temp, rArr...)
+
+		output = temp
+	}
+
+	return output
+}
+
+func binaryTreePostOrder(node *binaryNode) []int {
+
+	output := []int{}
+
+	if node != nil {
+
+		lArr := binaryTreePostOrder(node.lNode)
+		rArr := binaryTreePostOrder(node.rNode)
 		root := node.value
 
 		temp := []int{}
@@ -103,7 +96,7 @@ func binaryNodePostOrder(node *binaryNode) []int {
 		temp = append(temp, rArr...)
 		temp = append(temp, root)
 
-		output = append(temp, output...)
+		output = temp
 	}
 
 	return output
