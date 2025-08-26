@@ -37,6 +37,7 @@ func main() {
 	fmt.Println("19. Queues")
 	fmt.Println("20. Stacks")
 	fmt.Println("21. Binary Tree")
+	fmt.Println("22. Depth-first Search")
 	fmt.Print("Enter the number of the algorithm you want to run: ")
 
 	switch input {
@@ -171,6 +172,15 @@ func main() {
 		fmt.Printf("Output in order: %v\n", output)
 		output = binaryTreePostOrder(resp)
 		fmt.Printf("Output post order: %v\n", output)
+	case 22:
+		fmt.Println("Depth-first Search")
+		nums := []int{5, 2, 7, 1, 6, 3, 4, 8}
+		p, q := 2, 3
+		node := setBinaryTree(nums)
+		node = depthFirstSearch(node, p, q)
+		fmt.Printf("Input: %v\n", nums)
+		fmt.Printf("p: %d and q: %d\n", p, q)
+		fmt.Printf("The ancestor: %d\n", node.value)
 	default:
 		fmt.Println("Invalid input")
 	}
