@@ -3,19 +3,15 @@ package main
 func insertionSort(arr []int) []int {
 
 	for i := 0; i < len(arr); i++ {
-
-		insertIdx := i
-		value := arr[i]
-
-		for j := (i - 1); j >= 0; j-- {
-
-			if arr[j] > value {
-				arr[j+1] = arr[j]
-				insertIdx = j
+		insertionIdx := i
+		insertionVal := arr[i]
+		for j := i; j >= 0; j-- {
+			if arr[j] > insertionVal {
+				arr[insertionIdx] = arr[j]
+				insertionIdx = j
 			}
 		}
-
-		arr[insertIdx] = value
+		arr[insertionIdx] = insertionVal
 	}
 
 	return arr
