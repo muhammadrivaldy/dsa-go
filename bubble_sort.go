@@ -4,16 +4,16 @@ func bubbleSort(arr []int) []int {
 
 	for {
 
-		isSwap := false
+		swap := false
 
 		for i := 1; i < len(arr); i++ {
 			if arr[i-1] > arr[i] {
 				arr[i-1], arr[i] = arr[i], arr[i-1]
-				isSwap = true
+				swap = true
 			}
 		}
 
-		if !isSwap {
+		if !swap {
 			break
 		}
 	}
