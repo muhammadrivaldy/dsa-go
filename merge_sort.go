@@ -1,13 +1,13 @@
 package main
 
 func mergeSort(arr []int) []int {
+
 	if len(arr) <= 1 {
 		return arr
 	}
 
 	mid := len(arr) / 2
-	lArr := mergeSort(arr[:mid])
-	rArr := mergeSort(arr[mid:])
+	lArr, rArr := mergeSort(arr[:mid]), mergeSort(arr[mid:])
 	lIdx, rIdx := 0, 0
 	newArr := []int{}
 
