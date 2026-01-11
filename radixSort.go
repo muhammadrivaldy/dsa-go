@@ -6,14 +6,15 @@ func radixSort(arr []int) []int {
 	exp := 1
 
 	for (max / exp) > 0 {
-		rArr := make([][]int, 10)
+
+		radixArr := make([][]int, 10)
 		for _, i := range arr {
-			rVal := (i / exp) % 10
-			rArr[rVal] = append(rArr[rVal], i)
+			radixVal := (i / exp) % 10
+			radixArr[radixVal] = append(radixArr[radixVal], i)
 		}
 
 		arr = []int{}
-		for _, i := range rArr {
+		for _, i := range radixArr {
 			arr = append(arr, i...)
 		}
 
