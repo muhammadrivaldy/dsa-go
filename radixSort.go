@@ -9,8 +9,8 @@ func radixSort(arr []int) []int {
 
 		radixArr := make([][]int, 10)
 		for _, i := range arr {
-			radixVal := (i / exp) % 10
-			radixArr[radixVal] = append(radixArr[radixVal], i)
+			idx := (i / exp) % 10
+			radixArr[idx] = append(radixArr[idx], i)
 		}
 
 		arr = []int{}
