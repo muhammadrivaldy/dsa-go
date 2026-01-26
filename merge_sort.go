@@ -23,5 +23,6 @@ func mergeSort(arr []int) []int {
 
 	newArr = append(newArr, lArr[lIdx:]...)
 	newArr = append(newArr, rArr[rIdx:]...)
+
 	return newArr
 }
