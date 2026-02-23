@@ -14,15 +14,12 @@ func quickSort(arr []int, min, max int) []int {
 func quickSortPivot(arr []int, min, max int) int {
 
 	pivot := min
-
 	for i := min; i < max; i++ {
-
 		if arr[i] < arr[max] {
 			arr[pivot], arr[i] = arr[i], arr[pivot]
 			pivot++
 		}
 	}
-
 	arr[pivot], arr[max] = arr[max], arr[pivot]
 
 	return pivot
