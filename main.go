@@ -84,8 +84,8 @@ func main() {
 	case 9:
 		fmt.Println("Binary Search")
 		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}
-		fmt.Printf("Array value: %v, search value: %d\n", nums, 29)
-		fmt.Println("Index:", binarySearch(nums, 29))
+		fmt.Printf("Array value: %v, search value: %d\n", nums, 95)
+		fmt.Println("Index:", binarySearch(nums, 95))
 	case 10:
 		fmt.Println("Singly Linked List")
 		nums := []int{2, 20, 29, 32, 77, 95, 128, 881}

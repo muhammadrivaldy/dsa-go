@@ -13,7 +13,7 @@ func circularLinkedList(arr []int) *circularNode {
 	for _, i := range arr {
 		temp := &circularNode{value: i}
 		node.next = temp
-		node = node.next
+		node = temp
 	}
 
 	node.next = head.next

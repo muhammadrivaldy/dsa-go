@@ -2,8 +2,8 @@ package main
 
 type doublyNode struct {
 	value int
-	prev  *doublyNode
 	next  *doublyNode
+	prev  *doublyNode
 }
 
 func doublyLinkedList(arr []int) *doublyNode {
@@ -12,14 +12,10 @@ func doublyLinkedList(arr []int) *doublyNode {
 	node := head
 
 	for _, i := range arr {
-
 		temp := &doublyNode{value: i}
-		if node.value > 0 {
-			temp.prev = node
-		}
-
 		node.next = temp
-		node = node.next
+		temp.prev = node
+		node = temp
 	}
 
 	return head.next

@@ -13,7 +13,7 @@ func singlyLinkedList(arr []int) *singlyNode {
 	for _, i := range arr {
 		temp := &singlyNode{value: i}
 		node.next = temp
-		node = node.next
+		node = temp
 	}
 
 	return head.next
