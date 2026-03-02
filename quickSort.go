@@ -17,6 +17,6 @@ func quickSortPivot(arr []int, min, max int) int {
 			pivot++
 		}
 	}
-	arr[pivot], arr[max] = arr[max], arr[pivot]
+	arr[max], arr[pivot] = arr[pivot], arr[max]
 	return pivot
 }

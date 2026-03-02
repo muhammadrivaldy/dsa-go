@@ -7,7 +7,8 @@ func mergeSort(arr []int) []int {
 	}
 
 	mid := len(arr) / 2
-	lArr, rArr := mergeSort(arr[:mid]), mergeSort(arr[mid:])
+	lArr := mergeSort(arr[:mid])
+	rArr := mergeSort(arr[mid:])
 	lIdx, rIdx := 0, 0
 	newArr := []int{}
 
