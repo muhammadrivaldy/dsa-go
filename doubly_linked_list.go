@@ -13,8 +13,8 @@ func doublyLinkedList(arr []int) *doublyNode {
 
 	for _, i := range arr {
 		temp := &doublyNode{value: i}
-		node.next = temp
 		temp.prev = node
+		node.next = temp
 		node = temp
 	}
 

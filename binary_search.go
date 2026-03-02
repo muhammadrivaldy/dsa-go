@@ -1,16 +1,16 @@
 package main
 
-func binarySearch(arr []int, search int) int {
+func binarySearch(arr []int, target int) int {
 
 	min, max := 0, len(arr)-1
 
-	for min <= max {
+	for i := 0; i < len(arr); i++ {
 		mid := min + (max-min)/2
-		if arr[mid] == search {
+		if arr[mid] == target {
 			return mid
 		}
 
-		if arr[mid] < search {
+		if arr[mid] < target {
 			min = mid + 1
 		} else {
 			max = mid - 1
