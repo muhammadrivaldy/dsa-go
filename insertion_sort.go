@@ -1,8 +1,7 @@
 package main
 
 func insertionSort(arr []int) []int {
-
-	for i := 0; i < len(arr); i++ {
+	for i := 1; i < len(arr); i++ {
 		idx := i
 		val := arr[i]
 		for j := (i - 1); j >= 0; j-- {
@@ -13,6 +12,5 @@ func insertionSort(arr []int) []int {
 		}
 		arr[idx] = val
 	}
-
 	return arr
 }

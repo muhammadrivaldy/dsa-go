@@ -1,7 +1,6 @@
 package main
 
 func bubbleSort(arr []int) []int {
-
 	for {
 		swap := false
 		for i := 1; i < len(arr); i++ {
@@ -10,11 +9,9 @@ func bubbleSort(arr []int) []int {
 				swap = true
 			}
 		}
-
 		if !swap {
 			break
 		}
 	}
-
 	return arr
 }
