@@ -4,7 +4,7 @@ func selectionSort(arr []int) []int {
 	for i := 0; i < len(arr); i++ {
 		idx := i
 		for j := (i + 1); j < len(arr); j++ {
-			if arr[j] < arr[idx] {
+			if arr[idx] > arr[j] {
 				idx = j
 			}
 		}
